@@ -1,0 +1,29 @@
+neuron value: x
+value in next: y
+signal strength: z =
+
+
+
+0.75 -----------> (0.50) prob(0 - 1.0) 0.65, 0.35                0.75*0.65 + 0.25*0.40
+                                                  ------------->
+0.25 -----------> (0.50) prob(0 - 1.0) 0.40, 0.60                0.75*0.35 + 0.25*0.60
+
+
+
+0.25        0.20    0.15            0.10    0.10    0.10    0.05    0.05
+0.3125      0.25    0.0625 + 0.075  0.075   0.075   0.075   0.0375  0.0375
+                    0.1375
+
+big values upto 50
+
+y = x + (x * 0.25)
+
+small remaining values
+
+y = x - (x * 0.25)
+
+--------------------------------------------------
+- Total of all values in each neuron should be 1.0 in each layer
+- Total of strength of each connection from single neuron should be 1.0
+- value x in a neuron in one layer should be converted to x * y as value of neuron in next layer connected by connection
+with strength y
